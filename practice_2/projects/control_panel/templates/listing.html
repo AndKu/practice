@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Django Application</title>
+</head>
+<body>
+	<h1>Листинг каталога {{ dir_name }}</h1>
+	<table border = 1 cellspacing = 0 cellpadding = 5>
+		<tr>
+			<th>name</th>
+			<th>size (bytes)</th>
+			<th>change date</th>
+		</tr>
+		{% for key,value in dir_content.items %}
+		<tr>
+			<td>
+				{% if value.link %}
+					<a href="{{ value.link }}">{{ key }}</a>
+				{% else %}
+					{{ key }}
+				{% endif %}
+			</td>
+			<td>{{ value.size }}</td>
+			<td>{{ value.date|date:"d:m:y, H:i:s" }}</td>
+		</tr>
+		{% empty %}
+			<tr>
+				<td colspan = 3 >Sorry, no files in this directory!</td>
+			</tr>
+		{% endfor %}
+	</table>
+<!--
+	<ul>
+		{% for key,value in dir_content.items %}
+			{% if value.link %}
+				<li><a href="{{ value.link }}">{{ key }}</a></li>
+			{% else %}
+				<li>{{ key }}</li>
+			{% endif %}
+		{% empty %}
+			<li>Sorry, no files in this directory!</li>
+		{% endfor %}
+	</ul>
+-->
+</body>
+</html>
