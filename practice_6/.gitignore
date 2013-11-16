@@ -1,0 +1,7 @@
+.gitignore
+data*
+manage.py
+*.pyc
+__init__.py
+tests.py
+wsgi.py
