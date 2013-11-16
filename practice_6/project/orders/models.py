@@ -4,7 +4,6 @@ from django.db import models
 from library.models import Book
 
 
-
 class Customer(models.Model):
     firstName = models.CharField(max_length=32)
     lastName = models.CharField(max_length=32)
