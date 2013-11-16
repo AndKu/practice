@@ -4,7 +4,8 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(r'^$', 'library.views.books'),
     url(r'^library/$', 'library.views.books'),
     url(r'^library/books/$', 'library.views.books'),

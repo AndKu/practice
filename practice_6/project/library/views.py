@@ -6,11 +6,11 @@ from library.models import Book
 from library.models import Author
 
 
-
 def books(request):
     books = Book.objects.all()
-    context = {'books' : books }
+    context = {'books': books}
     return render(request, 'books.html', context)
+
 
 def book(request, book_id):
     if not(book_id.isdigit()) or book_id <= 0:
@@ -20,13 +20,15 @@ def book(request, book_id):
     except Exception, e:
         raise Http404
     else:
-        context = {'book' : book }
+        context = {'book': book}
         return render(request, 'book.html', context)
+
 
 def authors(request):
     authors = Author.objects.all()
-    context = {'authors' : authors }
+    context = {'authors': authors}
     return render(request, 'authors.html', context)
+
 
 def author(request, author_id):
     if not(author_id.isdigit()) or author_id <= 0:
@@ -36,6 +38,5 @@ def author(request, author_id):
     except Exception, e:
         raise Http404
     else:
-        context = {'author' : author }
+        context = {'author': author}
         return render(request, 'author.html', context)
-

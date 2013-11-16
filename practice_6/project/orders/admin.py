@@ -6,13 +6,13 @@ from orders.models import *
 
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['itemId','created','customer']
+    list_display = ['itemId', 'created', 'customer']
     ordering = ['created']
 
+
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ['firstName','lastName','address', 'email']
+    list_display = ['firstName', 'lastName', 'address', 'email']
 
 
 admin.site.register(Order, OrderAdmin)
 admin.site.register(Customer, CustomerAdmin)
-
