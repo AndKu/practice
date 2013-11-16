@@ -6,7 +6,7 @@ from library.models import *
 
 
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ['last_name', 'first_name', 'email']
+    list_display = ['last_name', 'first_name', 'email', 'birthyear']
     list_display_links = ['last_name', 'first_name']
     ordering = ['last_name', 'first_name']
 

@@ -21,7 +21,7 @@
 			</td>
 
 			<td>
-			{% for author in book.authors_names %}
+			{% for author in book.authors.all %}
 				<a href="{{ author.get_absolute_url }}">{{ author.last_name }} {{ author.first_name }}</a></br>
 			{% empty %}
 				<b>-</b>

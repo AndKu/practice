@@ -16,6 +16,12 @@ class Author(models.Model):
     email = models.EmailField(blank=True,null=True)
     birthyear = models.IntegerField(null=True,blank=True)
 
+    def year(self):
+        if self.birthyear:
+            return self.birthyear
+        else:
+            return 'возраст неизвестен'
+
     def get_absolute_url(self):
         return "/library/authors/%i" % self.id
 
@@ -32,9 +38,6 @@ class Book(models.Model):
     authors = models.ManyToManyField('Author')
     publisher = models.ForeignKey('Publisher')
     publication_date = models.DateField(default=datetime.datetime.now()) #auto_now_add=True - не редактируемый вариант
-
-    def authors_names(self):
-        return self.authors.all()
 
     def get_absolute_url(self):
         return "/library/books/%i" % self.id
