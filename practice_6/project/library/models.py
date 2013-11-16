@@ -38,6 +38,7 @@ class Book(models.Model):
     authors = models.ManyToManyField('Author')
     publisher = models.ForeignKey('Publisher')
     publication_date = models.DateField(default=datetime.datetime.now()) #auto_now_add=True - не редактируемый вариант
+    description = models.TextField(null=False,blank=False,default="")
 
     def get_absolute_url(self):
         return "/library/books/%i" % self.id

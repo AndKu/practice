@@ -17,7 +17,7 @@ class BookAdmin(admin.ModelAdmin):
     search_fields = ['title']
     ordering =['publication_date']
     fieldsets = (
-        (None, {'fields': ('title', 'authors', 'publication_date',)}),
+        (None, {'fields': ('title', 'authors', 'publication_date', 'description')}),
         ('Выходные данные', {
             'classes': ('wide',),
             'fields': ('publisher',),
