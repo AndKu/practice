@@ -14,6 +14,7 @@ class Author(models.Model):
     first_name = models.CharField(max_length=32)
     last_name = models.CharField(max_length=32)
     email = models.EmailField(blank=True,null=True)
+    birthyear = models.IntegerField(null=True,blank=True)
 
     def get_absolute_url(self):
         return "/library/authors/%i" % self.id
