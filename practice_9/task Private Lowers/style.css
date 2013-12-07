@@ -82,3 +82,7 @@ table{
 		.menu ul li a:hover{
 			color: #000;
 		}
+.quote{
+	font-size: 11px;
+	font-style: italic;
+}
