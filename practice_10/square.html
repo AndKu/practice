@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function go(){
+				var square = document.getElementById("square");
+				var height = clientHeight();
+				if (parseInt(square.style.top) < height - parseInt(square.style.height) ){
+					square.style.top = parseInt(square.style.top) + 1 +"px";
+					var timer=setTimeout("go()",5);
+				}
+			}
+			function clientHeight(){ 
+				return document.documentElement.clientHeight == 0 ? document.body.clientHeight : document.documentElement.clientHeight;
+			}
+		</script>
+	</head>
+	<body>
+		<div title="click me!" id='square' style="width: 20px; height: 20px; left: 50%; background-color: blue; position: absolute; top:0;" onclick="javascript: go()">
+		</div>
+	</body>
+</html>
